@@ -10,7 +10,7 @@ get_header();
         <ul class="rslides" id="slider3">
             <?php foreach (get_field('imagens') as $obj) : ?>
             <li>
-                <div style="background: url(<?=$obj['imagem']?>) repeat 0px 0px" class="slider-info bg1 w3-agile-grid">
+                <div style="background: url(<?=$obj['imagem']['sizes']['large']?>) no-repeat 0px 0px; background-size: cover;" class="slider-info bg1 w3-agile-grid">
                     <div class="bs-slider-overlay">
                         <div class="banner-text container agile-info">
                             <h5 class="tag text-center mb-3 text-uppercase"><?=$obj['texto_menor']?></h5>
