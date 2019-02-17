@@ -73,35 +73,56 @@ get_header();
 <!-- about -->
 <section class="about py-4 container">
     <div class="row">
-        <h3 class="heading mb-md-2 mb-2 col-12">Qualificações</h3>
-        <div class="py-md-3 col-6">
-            <?= get_field('qualificacao_texto'); ?>
-        </div>
-        <div class="py-md-3 col-6">
-            <div class="row agile-info">
-                <div class="col-9">
-                    <h4 class="col-12  mb-2">Cursos</h4>
-                    <?php foreach (get_field('cursos') as $curso) : ?>
-                    <div class=" col-12 ">
-                        <p class="margin py-1"><span class="fas fa-check-square mr-2" aria-hidden="true"></span><?=$curso['nome']?></p>
+        <div class="row">
+            <div class="col-md-8">
+                <h3 class="heading mb-md-2 mb-2 col-12">Qualificações / Skills</h3>
+                <div class="row">
+                    <div class="py-md-3 col-6">
+                        <?= get_field('qualificacao_texto'); ?>
                     </div>
-                    <?php endforeach; ?>
+                    <div class="py-md-3 col-6">
+                        <?= get_field('qualificacao_texto_ingles'); ?>
+                    </div>
                 </div>
-                <div class="col-3 about-grids">
-                    <div class="pr-md-0">
-                        <h4 class="col-12  mb-2 pl-0">Curriculo</h4>
-                        <?php foreach (get_field('curriculo') as $key => $obj) :?>
-                        <div class="mb-3">
-                            <a href="<?=$obj['arquivo']?>">
-                                <?php if ($key%2 == 0): ?>
-                                <h3 class="margin"><?=$obj['lingua']?></h3>
-                                <?php else: ?>
-                                <h3 class="green"><?=$obj['lingua']?></h3>
-                                <?php endif; ?>
-                            </a>
+            </div>
+            <div class="col-md-4">
+                <div class="col-md-12 mt-0">
+                    <h3 class="heading mb-md-2 mb-2 col-12 ml-0 pl-0">Cursos</h3>
+                    <div class="row agile-info mt-3">
+                        <div class="col-12 ml-0">
+                            <?php foreach (get_field('cursos') as $curso) : ?>
+                            <div class="col-12 ml-0 pl-0">
+                                <p class="margin py-1"><span class="fas fa-check-square mr-2" aria-hidden="true"></span><?=$curso['nome']?></p>
+                            </div>
+                            <?php endforeach; ?>
                         </div>
-                        <?php endforeach; ?>
-                        <a href="#"><i class="fab fa-linkedin mt-3"></i></a>
+                        <div class="mt-4 col-12 about-grids">
+                            <div class="pr-md-0">
+                                <h4 class="col-12  mb-2 pl-0">Curriculo</h4>
+                                <div class="row">
+                                    <div class="pl-0 ml-0 col-md-8">
+                                        <div>
+                                            <ul class="no-dot d-flex justify-content-md-around">
+                                                <?php foreach (get_field('curriculo') as $key => $obj) :?>
+                                                    <li>
+                                                        <a href="<?=$obj['arquivo']?>">
+                                                        <?php if ($key%2 == 0): ?>
+                                                        <h3 class="margin"><?=$obj['lingua']?></h3>
+                                                        <?php else: ?>
+                                                        <h3 class="green"><?=$obj['lingua']?></h3>
+                                                        <?php endif; ?>
+                                                    </a>
+                                                    </li>
+                                                <?php endforeach; ?>
+                                                <li>
+                                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -146,20 +167,13 @@ get_header();
 <section class="services py-3">
     <div class="container agile-info py-md-3">
         <h3 class="heading  mb-3">Consultoria</h3>
-        <div class="row service_grids text-white">
+        <div class="row service_grids text-white d-flex align-items-baseline">
             <?php foreach (get_field('caixa') as $caixa) : ?>
-            <div class="col-md-3 col-sm-6 mb-md-0 mb-4 team-grid w3-agile-grid">
+            <div class="col-md-3 col-sm-6">
                 <div class="team-members">
-                    <div class="team-avatar">
-                        <img src="<?=$caixa['imagem']?>" class="img-fluid" alt="image">
-                    </div>
-                    <div class="team-desc" style="padding: 20px;">
-                        <h4 class="p2"><?=$caixa['titulo']?></h4>
-                    </div>
-                    <div class="agile-info team-desc text-desc">
-                        <div class="borda-p"></div>
-                        <p class="mx-3"><?=$caixa['sub_titulo']?></p>
-                    </div>
+                    <img src="<?=$caixa['imagem']?>" class="img-fluid img-service" alt="image">
+                    <h4 class="title-service p2 mt-2"><?=$caixa['titulo']?></h4>
+                    <p class="mx-3 text-center mt-2"><?=$caixa['sub_titulo']?></p>
                 </div>
             </div>
             <?php endforeach; ?>

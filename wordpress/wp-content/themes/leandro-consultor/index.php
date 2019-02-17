@@ -163,7 +163,7 @@ get_header();
 <!-- about -->
 <section class="about py-4 container">
     <div class="row">
-        <h3 class="heading mb-md-2 mb-2 col-12">Qualificações</h3>
+        <h3 class="heading mb-md-2 mb-2 col-12">Qualificações / Skills</h3>
         <div class="py-md-3 col-6">
             <p>Cras blandit nibh ut pretium elementum. Duis bibendum convallis nun ca dictum. Quisquenac ipsum porta, ultrices
                 metus sit amet,curs in nisl. Duis aliquet varius sem sit ametconvallis nun ca dictum.</p>
