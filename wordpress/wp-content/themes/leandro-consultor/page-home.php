@@ -74,7 +74,7 @@ get_header();
 <section class="about py-4 container">
     <div class="row">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-6">
                 <h3 class="heading mb-md-2 mb-2 col-12">Qualificações / Skills</h3>
                 <div class="row">
                     <div class="py-md-3 col-6">
@@ -85,7 +85,7 @@ get_header();
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="col-md-12 mt-0">
                     <h3 class="heading mb-md-2 mb-2 col-12 ml-0 pl-0">Cursos</h3>
                     <div class="row agile-info mt-3">

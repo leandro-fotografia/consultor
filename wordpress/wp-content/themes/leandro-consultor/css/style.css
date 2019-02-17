@@ -730,7 +730,7 @@ h2.heading,h3.heading {
 }
 
 .img-service {
-    max-height: 200px; 
+    height: 200px;
     width: auto;
     text-align: center;
     margin: 0px auto;
