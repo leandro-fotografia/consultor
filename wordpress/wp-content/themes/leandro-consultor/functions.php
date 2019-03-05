@@ -20,3 +20,13 @@ function assets() {
 }
 
 add_action('wp_enqueue_scripts', 'assets');
+
+function getTelefone($id) {
+    $fields = '';
+    if (get_fields($id) !== false || !empty(get_fields($id))) {
+        $fields = get_fields($id);
+        return $fields['telefone'];
+    } else {
+        return $fields;
+    }
+}

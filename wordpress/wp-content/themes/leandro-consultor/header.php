@@ -55,7 +55,7 @@
 						</li>
 					</ul>
 					<div class="buttons">
-						<p><i class="fas mr-1 fa-phone"></i> 11 9999-9999</p>
+						<p><i class="fas mr-1 fa-phone"></i> <?=getTelefone(get_the_ID());?></p>
 					</div>
 				</div>
 			</nav>
