@@ -106,12 +106,14 @@ get_header();
         <h4 class="heading mb-md-2 mb-2 col-12 ml-0 p-0">Depoimentos</h4>
         <div class="row  owl-carousel owl-theme slider-cima">
 
-            <?php foreach (get_field('caixa_projeto') as $caixa) : ?>
+            <?php foreach (get_field('depoimentos') as $dep) : ?>
             <div>
-            <p style="background:white;color:black; padding-left: 18px;line-height: 19px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            </p>
-
-            <p class="text-center"style="background:white;color:black; padding-left: 18px;">Jefferson Sant' Ana</p>
+                <p class="text-center"style="background:white;color:black; padding-left: 18px;">
+                    <?=$dep['depoimento'];?>
+                </p>
+                <p class="text-center"style="background:white;color:black; padding-left: 18px;">
+                    <?=$dep['autor'];?>
+                </p>
             </div>
             <?php endforeach; ?>
 
@@ -189,8 +191,8 @@ get_header();
                         </div>
                     </div>
                     <div class="col-4 mt-5">
-                        <img src="http://leandrolnogueira.com.br/wp-content/uploads/2019/02/mkt-produto.png"
-                            class="img-fluid img-service" alt="image">
+                        <img src="<?=$caixa['imagem']?>"
+                            class="img-fluid img-service" >
                     </div>
                 </div>
             </div>
@@ -203,60 +205,11 @@ get_header();
 <section id="contact">
     <div class="container inner">
         <h2 class="text-left mb-4 mt-4">Entre em contato</h2>
-        <p class="text-left">Cras mattis consectetur purus sit amet fermentum. Lorem ipsum dolor sit
-            amet,
-            consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod. Nulla vitae
-            elit libero, a
-            pharetra augue. Aenean eu leo quam. Pellentesque ornare sem lacinia.</p>
-
-        <p> <br>
-            <strong>Telefone:</strong> +55 (11) 99999-9999 <strong style="margin-left:30px;">Email:</strong> <a
-                href="contato@email.com" style="color:black">contatot@email.com</a>
-        </p>
-        </ul>
+        <?=get_field('texto_contato')?>
+        
         <div class="divide50"></div>
         <div class="form-container">
-            <form method="post">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="form-field">
-                            <label>
-                                <input type="text" name="name" placeholder="Nome">
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-field">
-                            <label>
-                                <input type="email" name="email" placeholder="e-mail">
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-field">
-                            <label>
-                                <input type="tel" name="tel" placeholder="Telefone">
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-field">
-                            <label class="custom-select">
-                                <select name="department">
-                                    <option value="">....</option>
-                                    <option value="Sales">....</option>
-                                    <option value="Marketing">....</option>
-                                    <option value="Support">....</option>
-                                    <option value="Other">....</option>
-                                </select>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <textarea name="message" placeholder="Escreva sua mensagem aqui..."></textarea>
-                <input type="submit" class="btn" value="Enviar" data-error="Preencha todos campos"
-                    data-processing="Enviando..." data-success="Obrigado!">
-            </form>
+            <?=do_shortcode('[contact-form-7 id="68" title="Contact form 1"]'); ?>
         </div>
     </div>
 </section>

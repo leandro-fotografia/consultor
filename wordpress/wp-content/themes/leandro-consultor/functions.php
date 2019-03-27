@@ -20,6 +20,7 @@ function assets() {
 }
 
 add_action('wp_enqueue_scripts', 'assets');
+add_filter( 'widget_text', 'do_shortcode' );
 
 function getTelefone($id) {
     $fields = '';

@@ -5,6 +5,7 @@
 ajax/
 contact/
 /style/
+db_data
 
 # videos mp4
 *.mp4
