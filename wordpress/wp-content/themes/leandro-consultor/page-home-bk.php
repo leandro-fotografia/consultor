@@ -86,9 +86,9 @@ get_header();
                 </div>
             </div>
         </div>
-        <div class="col-md-3 p-0">
+        <div class="col-md-4 p-0">
             <div class="col-md-12 mt-0 p-0">
-                <h3 class="heading mb-md-2 mb-2 col-12 ml-0 p-0" style="margin-left: -7% !important;">Cursos / Courses</h3>
+                <h3 class="heading mb-md-2 mb-2 col-12 ml-0 p-0">Cursos / Courses</h3>
                 <div class="row agile-info mt-3">
                     <div class="col-12 ml-0 p-0">
                         <?php foreach (get_field('cursos') as $curso) : ?>
@@ -102,21 +102,31 @@ get_header();
                 </div>
             </div>
         </div>
-        <div class="col-3 about-grids pr-0 text-justify pl-4">
-        <h4 class="heading mb-md-2 mb-2 col-12 ml-0 p-0">Depoimentos</h4>
-        <div class="row  owl-carousel owl-theme slider-cima">
+        <div class="col-2 about-grids">
+            <div class="pr-md-0">
+                <h4 class="heading mb-md-2 mb-2 col-12 ml-0 p-0">Curriculo</h4>
+                <div class="row blog-grids .owl-carousel-depoimentos owl-theme">
 
             <?php foreach (get_field('caixa_projeto') as $caixa) : ?>
-            <div>
-            <p style="background:white;color:black; padding-left: 18px;line-height: 19px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            </p>
-
-            <p class="text-center"style="background:white;color:black; padding-left: 18px;">Jefferson Sant' Ana</p>
+            <div class="col-lg-12 w3-agile-grid">
+                <div class="row blog-grid1 mr-lg-1">
+                    <div class="col-lg-7 col-md-8 agile-info col-sm-7 blog-text">
+                        <p class="mt-2"><?=$caixa['data']?></p>
+                        <div class="p2">
+                            <?=$caixa['texto']?>
+                        </div>
+                    </div>
+                    <div class="col-4 mt-5">
+                        <img src="http://leandrolnogueira.com.br/wp-content/uploads/2019/02/mkt-produto.png"
+                            class="img-fluid img-service" alt="image">
+                    </div>
+                </div>
             </div>
             <?php endforeach; ?>
 
-
         </div>
+
+            </div>
         </div>
 
     </div>
@@ -177,7 +187,7 @@ get_header();
 <section class="services py-3" style="background-color: whitesmoke;">
     <div class="container agile-info py-md-3">
         <h3 class="heading mb-lg-3 mb-3">Projetos</h3>
-        <div class="row blog-grids owl-carousel owl-theme slider-baixo">
+        <div class="row blog-grids owl-carousel owl-theme">
 
             <?php foreach (get_field('caixa_projeto') as $caixa) : ?>
             <div class="col-lg-12 w3-agile-grid">
@@ -208,41 +218,40 @@ get_header();
             consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod. Nulla vitae
             elit libero, a
             pharetra augue. Aenean eu leo quam. Pellentesque ornare sem lacinia.</p>
-
-        <p> <br>
-            <strong>Telefone:</strong> +55 (11) 99999-9999 <strong style="margin-left:30px;">Email:</strong> <a
-                href="contato@email.com" style="color:black">contatot@email.com</a>
-        </p>
+        
+            <p> <br> 
+            <strong>Telefone:</strong> +55 (11) 99999-9999    <strong style="margin-left:30px;">Email:</strong> <a href="contato@email.com" style="color:black">contatot@email.com</a>
+            </p>
         </ul>
         <div class="divide50"></div>
         <div class="form-container">
-            <form method="post">
+            <form  method="post">
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="form-field">
                             <label>
                                 <input type="text" name="name" placeholder="Nome">
                             </label>
-                        </div>
-                    </div>
+                        </div>                       
+                    </div>                   
                     <div class="col-sm-6">
                         <div class="form-field">
                             <label>
                                 <input type="email" name="email" placeholder="e-mail">
                             </label>
-                        </div>
-                    </div>
+                        </div>                       
+                    </div>                
                     <div class="col-sm-6">
                         <div class="form-field">
                             <label>
                                 <input type="tel" name="tel" placeholder="Telefone">
                             </label>
-                        </div>
-                    </div>
+                        </div>                      
+                    </div>                 
                     <div class="col-sm-6">
                         <div class="form-field">
                             <label class="custom-select">
-                                <select name="department">
+                                <select name="department" >
                                     <option value="">....</option>
                                     <option value="Sales">....</option>
                                     <option value="Marketing">....</option>
@@ -250,14 +259,14 @@ get_header();
                                     <option value="Other">....</option>
                                 </select>
                             </label>
-                        </div>
-                    </div>
-                </div>
-                <textarea name="message" placeholder="Escreva sua mensagem aqui..."></textarea>
+                        </div>                     
+                    </div>                   
+                </div>               
+                <textarea name="message" placeholder="Escreva sua mensagem aqui..." ></textarea>
                 <input type="submit" class="btn" value="Enviar" data-error="Preencha todos campos"
                     data-processing="Enviando..." data-success="Obrigado!">
-            </form>
-        </div>
+            </form>         
+        </div>     
     </div>
 </section>
 <?php get_footer();?>

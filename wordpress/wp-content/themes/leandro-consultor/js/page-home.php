@@ -10,8 +10,7 @@ get_header();
         <ul class="rslides" id="slider3">
             <?php foreach (get_field('imagens') as $obj) : ?>
             <li>
-                <div style="background: url(<?=$obj['imagem']?>) no-repeat 0px 0px; background-size: cover;"
-                    class="slider-info bg1 w3-agile-grid">
+                <div style="background: url(<?=$obj['imagem']?>) no-repeat 0px 0px; background-size: cover;" class="slider-info bg1 w3-agile-grid">
                     <div class="bs-slider-overlay">
                         <div class="banner-text container agile-info">
                             <h5 class="tag text-center mb-3 text-uppercase"><?=$obj['texto_menor']?></h5>
@@ -74,51 +73,61 @@ get_header();
 <!-- about -->
 <section class="about py-4 container">
     <div class="row">
-
-        <div class="col-md-6">
-            <h3 class="heading mb-md-2 mb-2 col-12">Qualificações / Skills</h3>
-            <div class="row">
-                <div class="py-md-3 col-6">
-                    <?= get_field('qualificacao_texto'); ?>
-                </div>
-                <div class="py-md-3 col-6">
-                    <?= get_field('qualificacao_texto_ingles'); ?>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 p-0">
-            <div class="col-md-12 mt-0 p-0">
-                <h3 class="heading mb-md-2 mb-2 col-12 ml-0 p-0" style="margin-left: -7% !important;">Cursos / Courses</h3>
-                <div class="row agile-info mt-3">
-                    <div class="col-12 ml-0 p-0">
-                        <?php foreach (get_field('cursos') as $curso) : ?>
-                        <div class="col-12 ml-0 p-0">
-                            <p class="margin py-1"><span class="fas fa-check-square mr-2"
-                                    aria-hidden="true"></span><?=$curso['nome']?></p>
-                        </div>
-                        <?php endforeach; ?>
+        
+            <div class="col-md-6">
+                <h3 class="heading mb-md-2 mb-2 col-12">Qualificações / Skills</h3>
+                <div class="row">
+                    <div class="py-md-3 col-6">
+                        <?= get_field('qualificacao_texto'); ?>
                     </div>
-
+                    <div class="py-md-3 col-6">
+                        <?= get_field('qualificacao_texto_ingles'); ?>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-3 about-grids pr-0 text-justify pl-4">
-        <h4 class="heading mb-md-2 mb-2 col-12 ml-0 p-0">Depoimentos</h4>
-        <div class="row  owl-carousel owl-theme slider-cima">
-
-            <?php foreach (get_field('caixa_projeto') as $caixa) : ?>
-            <div>
-            <p style="background:white;color:black; padding-left: 18px;line-height: 19px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            </p>
-
-            <p class="text-center"style="background:white;color:black; padding-left: 18px;">Jefferson Sant' Ana</p>
+            <div class="col-md-5">
+                <div class="col-md-12 mt-0">
+                    <h3 class="heading mb-md-2 mb-2 col-12 ml-0 pl-0">Cursos</h3>
+                    <div class="row agile-info mt-3">
+                        <div class="col-12 ml-0">
+                            <?php foreach (get_field('cursos') as $curso) : ?>
+                            <div class="col-12 ml-0 pl-0">
+                                <p class="margin py-1"><span class="fas fa-check-square mr-2" aria-hidden="true"></span><?=$curso['nome']?></p>
+                            </div>
+                            <?php endforeach; ?>
+                        </div>
+                        
+                    </div>
+                </div>
             </div>
-            <?php endforeach; ?>
-
-
-        </div>
-        </div>
-
+            <div class="mt-4 col-1 about-grids">
+                            <div class="pr-md-0">
+                                <h4 class="col-12  mb-2 pl-0">Curriculo</h4>
+                                <div class="row">
+                                    <div class="pl-0 ml-0 col-md-8">
+                                        <div>
+                                            <ul class="no-dot  justify-content-md-around">
+                                                <?php foreach (get_field('curriculo') as $key => $obj) :?>
+                                                    <li>
+                                                        <a href="<?=$obj['arquivo']?>">
+                                                        <?php if ($key%2 == 0): ?>
+                                                        <h3 class="margin"><?=$obj['lingua']?></h3>
+                                                        <?php else: ?>
+                                                        <h3 class="green"><?=$obj['lingua']?></h3>
+                                                        <?php endif; ?>
+                                                    </a>
+                                                    </li>
+                                                <?php endforeach; ?>
+                                                <li>
+                                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
     </div>
 </section>
 <!-- //about -->
@@ -177,8 +186,8 @@ get_header();
 <section class="services py-3" style="background-color: whitesmoke;">
     <div class="container agile-info py-md-3">
         <h3 class="heading mb-lg-3 mb-3">Projetos</h3>
-        <div class="row blog-grids owl-carousel owl-theme slider-baixo">
-
+        <div class="row blog-grids owl-carousel owl-theme">
+            
             <?php foreach (get_field('caixa_projeto') as $caixa) : ?>
             <div class="col-lg-12 w3-agile-grid">
                 <div class="row blog-grid1 mr-lg-1">
@@ -188,76 +197,12 @@ get_header();
                             <?=$caixa['texto']?>
                         </div>
                     </div>
-                    <div class="col-4 mt-5">
-                        <img src="http://leandrolnogueira.com.br/wp-content/uploads/2019/02/mkt-produto.png"
-                            class="img-fluid img-service" alt="image">
-                    </div>
                 </div>
             </div>
             <?php endforeach; ?>
 
         </div>
 
-    </div>
-</section>
-<section id="contact">
-    <div class="container inner">
-        <h2 class="text-left mb-4 mt-4">Entre em contato</h2>
-        <p class="text-left">Cras mattis consectetur purus sit amet fermentum. Lorem ipsum dolor sit
-            amet,
-            consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod. Nulla vitae
-            elit libero, a
-            pharetra augue. Aenean eu leo quam. Pellentesque ornare sem lacinia.</p>
-
-        <p> <br>
-            <strong>Telefone:</strong> +55 (11) 99999-9999 <strong style="margin-left:30px;">Email:</strong> <a
-                href="contato@email.com" style="color:black">contatot@email.com</a>
-        </p>
-        </ul>
-        <div class="divide50"></div>
-        <div class="form-container">
-            <form method="post">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="form-field">
-                            <label>
-                                <input type="text" name="name" placeholder="Nome">
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-field">
-                            <label>
-                                <input type="email" name="email" placeholder="e-mail">
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-field">
-                            <label>
-                                <input type="tel" name="tel" placeholder="Telefone">
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-field">
-                            <label class="custom-select">
-                                <select name="department">
-                                    <option value="">....</option>
-                                    <option value="Sales">....</option>
-                                    <option value="Marketing">....</option>
-                                    <option value="Support">....</option>
-                                    <option value="Other">....</option>
-                                </select>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <textarea name="message" placeholder="Escreva sua mensagem aqui..."></textarea>
-                <input type="submit" class="btn" value="Enviar" data-error="Preencha todos campos"
-                    data-processing="Enviando..." data-success="Obrigado!">
-            </form>
-        </div>
     </div>
 </section>
 <?php get_footer();?>
