@@ -51,7 +51,7 @@
 							<a class="nav-link" href="#">Projetos</a>
 						</li>
 						<li class="nav-item mr-lg-3">
-							<a class="nav-link" href="#">Lazer</a>
+							<a class="nav-link" href="#">Contato</a>
 						</li>
 					</ul>
 					<div class="buttons">

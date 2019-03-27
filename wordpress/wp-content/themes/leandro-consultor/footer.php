@@ -36,7 +36,7 @@
 				auto: true,
 				pager: true,
 				nav: false,
-				speed: 500,
+				speed: 1000,
 				namespace: "callbacks",
 				before: function () {
 					$('.events').append("<li>before event fired.</li>");
@@ -78,7 +78,7 @@
 			});
 
 		});
-		$('.owl-carousel').owlCarousel({
+		$('.slider-baixo').owlCarousel({
 			loop: true,
 			margin: 10,
 			nav: true,
@@ -94,6 +94,25 @@
 				},
 				1000: {
 					items: 2
+				}
+			}
+		})
+		$('.slider-cima').owlCarousel({
+			loop: true,
+			margin: 10,
+			nav: true,
+			autoplay: true,
+			autoplayTimeout: 3000,
+			autoplayHoverPause: true,
+			responsive: {
+				0: {
+					items: 1
+				},
+				600: {
+					items: 1
+				},
+				1000: {
+					items: 1
 				}
 			}
 		})
