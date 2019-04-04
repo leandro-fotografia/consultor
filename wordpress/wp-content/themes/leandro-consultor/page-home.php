@@ -39,7 +39,11 @@ jQuery(document).ready(function($) {
         <div class="col px-0  agileits_w3layouts_about_counter_left w3-agile-grid">
             <div class="counterinfo agile-info">
                 <h3><?=$contador['titulo']?></h3>
+                <?php if ($contador['grandeza'] == 'R$'): ?>
+                <span><?=$contador['grandeza']?></span><span class="counter"><?=$contador['numero']?></span>
+                <?php else: ?>
                 <span class="counter"><?=$contador['numero']?></span><span><?=$contador['grandeza']?></span>
+                <?php endif; ?>
             </div>
             <div class="clearfix"> </div>
         </div>
