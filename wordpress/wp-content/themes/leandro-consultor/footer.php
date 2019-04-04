@@ -3,7 +3,7 @@
 	<!-- footer -->
 	<footer>
 		<div class="copyright py-4 text-center">
-			<p>©2018. Todos direitos reservados</p>
+			<p>©2019. Todos direitos reservados</p>
 		</div>
 	</footer>
 

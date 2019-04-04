@@ -108,7 +108,7 @@ header h1 a span {
 .navbar-light .navbar-nav .active>.nav-link,
 .navbar-light .navbar-nav .nav-link.show,
 .navbar-light .navbar-nav .nav-link.active ,.dropdown-item:hover{
-    color: #232323;
+    color: #a8a8a8;
     background: transparent;
     border-radius: 5px;
 }
@@ -179,7 +179,7 @@ header h1 a span {
 }
 
 .banner-text {
-    padding: 18vw 0 0;
+    padding: 23vw 0 0;
     text-align: center;
     text-align: left;
     width: 40%;
@@ -528,8 +528,7 @@ p.sub-para {
     -ms-background-size: 2px;
 }
 h4.agile-title,h1.agile-title,h2.agile-title {
-    letter-spacing: 2px;
-    line-height: 1.4em;
+    letter-spacing: 2px;   
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.37);
     font-size: 3.5em;
     font-weight: 700;
@@ -661,8 +660,7 @@ h2.heading,h3.heading {
 }
 .agileits_w3layouts_about_counter_left h3 {
     color:black;
-    font-size: 14px;
-    text-transform: capitalize;
+    font-size: 14px;    
     letter-spacing: 2px;
     min-height: 50px;
 }
@@ -2221,4 +2219,12 @@ background: none;
     color: white;
     width: 30%;
     margin: 10px 0 19px 0;
+}
+
+.owl-item p{
+    background:none !important;
+    text-align: justify !important;
+}
+.depoimentos .owl-nav{
+    margin-top: -30px;
 }

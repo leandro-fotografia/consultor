@@ -36,26 +36,29 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav mx-auto text-center">
 						<li class="nav-item  mr-lg-3">
-							<a class="nav-link" href="#">Estatísticas</a>
+							<a class="nav-link scroll" href="#estatisticas">Estatísticas</a>
 						</li>
 						<li class="nav-item  mr-lg-3">
-							<a class="nav-link" href="#">Perfil</a>
+							<a class="nav-link scroll" href="#sobre">Perfil</a>
 						</li>
 						<li class="nav-item mr-lg-3">
-							<a class="nav-link" href="#">Consultoria</a>
+							<a class="nav-link scroll" href="#consultoria">Consultoria</a>
 						</li>
 						<li class="nav-item mr-lg-3">
-							<a class="nav-link" href="#">Empresas</a>
+							<a class="nav-link scroll" href="#empresas">Empresas</a>
 						</li>
 						<li class="nav-item mr-lg-3">
-							<a class="nav-link" href="#">Projetos</a>
+							<a class="nav-link scroll" href="#projetos">Projetos</a>
 						</li>
 						<li class="nav-item mr-lg-3">
-							<a class="nav-link" href="#">Contato</a>
+							<a class="nav-link scroll" href="#contact">Contato</a>
 						</li>
 					</ul>
 					<div class="buttons">
-						<p><i class="fas mr-1 fa-phone"></i> <?=getTelefone(get_the_ID());?></p>
+						<p>
+							<a class="text-white" href=""><i class="fab fa-linkedin-in"></i></a>
+							<i class="fas mr-1 fa-phone"></i> <?=getTelefone(get_the_ID());?>							
+						</p>						
 					</div>
 				</div>
 			</nav>

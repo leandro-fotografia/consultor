@@ -4,6 +4,14 @@
  */
 get_header();
 ?>
+<script type="text/javascript">
+jQuery(document).ready(function($) { 
+    $(".scroll").click(function(event){        
+        event.preventDefault();
+        $('html,body').animate({scrollTop:$(this.hash).offset().top}, 800);
+   });
+});
+</script>
 <!-- banner -->
 <section class="banner" id="home">
     <div class="callbacks_container">
@@ -25,7 +33,7 @@ get_header();
     </div>
 </section>
 <!-- //banner -->
-<section class="estatisticas container text-center mt-3 py-3">
+<section class="container text-center mt-3 py-3" id="estatisticas">
     <div class="row">
         <?php foreach (get_field('contadores') as $contador) : ?>
         <div class="col px-0  agileits_w3layouts_about_counter_left w3-agile-grid">
@@ -40,7 +48,7 @@ get_header();
 </section>
 
 <!-- servicesbottom -->
-<section class="service-bottom mt-3">
+<section class="service-bottom mt-3" id="sobre">
     <div class="container-fluid">
 
         <div class="row services-bottom">
@@ -72,10 +80,10 @@ get_header();
 </section>
 <!-- //servicesbottom -->
 <!-- about -->
-<section class="about py-4 container">
+<section class="about pt-4 container" id="consultoria" >
     <div class="row">
 
-        <div class="col-md-6">
+        <div class="col-md-8">
             <h3 class="heading mb-md-2 mb-2 col-12">Qualificações / Skills</h3>
             <div class="row">
                 <div class="py-md-3 col-6">
@@ -86,9 +94,10 @@ get_header();
                 </div>
             </div>
         </div>
-        <div class="col-md-3 p-0">
+        <div class="col-md-4 p-0">
             <div class="col-md-12 mt-0 p-0">
-                <h3 class="heading mb-md-2 mb-2 col-12 ml-0 p-0" style="margin-left: -7% !important;">Cursos / Courses</h3>
+                <h3 class="heading mb-md-2 mb-2 col-12 ml-0 p-0" style="margin-left: -7% !important;">Cursos / Courses
+                </h3>
                 <div class="row agile-info mt-3">
                     <div class="col-12 ml-0 p-0">
                         <?php foreach (get_field('cursos') as $curso) : ?>
@@ -102,38 +111,38 @@ get_header();
                 </div>
             </div>
         </div>
-        <div class="col-3 about-grids pr-0 text-justify pl-4">
-        <h4 class="heading mb-md-2 mb-2 col-12 ml-0 p-0">Depoimentos</h4>
+    </div>
+</section>
+<section class="depoimentos" style="background: white">
+<div style="background: rgba(0, 0, 0, 0.03);" class="pt-4">
+    <div class="container">
+    <div class="col-12 about-grids px-0 text-justify">
+        <h4 class="heading mb-md-2 mb-2 col-12 ml-0 p-0">Depoimentos / Recommendations</h4>
         <div class="row  owl-carousel owl-theme slider-cima">
 
             <?php foreach (get_field('depoimentos') as $dep) : ?>
             <div>
-                <p class="text-center"style="background:white;color:black; padding-left: 18px;">
+                <p class="text-center" style="background:white;color:black; padding-left: 18px;">
                     <?=$dep['depoimento'];?>
                 </p>
-                <p class="text-center"style="background:white;color:black; padding-left: 18px;">
+                <p class="text-center" style="background:white;color:black; padding-left: 18px;">
                     <?=$dep['autor'];?>
                 </p>
             </div>
             <?php endforeach; ?>
-
-
         </div>
-        </div>
-
+    </div>
+    </div>
     </div>
 </section>
-<!-- //about -->
-
-<!-- how we work -->
-<section class="work py-4">
+<section class="work py-4 mt-2" id="empresas">
     <div class="work-layer py-4">
         <div class="container py-md-3">
-            <h3 class="heading">Empresas</h3>
+            <h3 class="heading">Empresas / Companies</h3>
             <div class="row  agile-info mt-3">
                 <div class="col-6 ">
                     <div class="row px-2">
-                        <h3 class="col-12 my-3">Vivencia</h3>
+                        <h3 class="col-12 my-3">Vicência / Experience</h3>
                         <?php foreach(get_field('vivencia') as $obj) : ?>
                         <div class="col-md-4 col-sm-6 steps-reach px-3 my-3">
                             <img src="<?=$obj['logo']?>" class="img-fluid" />
@@ -143,7 +152,7 @@ get_header();
                 </div>
                 <div class="col-6 ">
                     <div class="row px-2">
-                        <h3 class="col-12 my-3">Parceiros</h3>
+                        <h3 class="col-12 my-3">Parceiros / Partners</h3>
                         <?php foreach(get_field('parceiros') as $obj) : ?>
                         <div class="col-md-4 col-sm-6 steps-reach px-3 my-3">
                             <img src="<?=$obj['logo']?>" class="img-fluid" />
@@ -158,9 +167,9 @@ get_header();
 <!-- //how we work -->
 
 <!-- management services -->
-<section class="services py-3">
+<section class="services py-3" id="projetos">
     <div class="container agile-info py-md-3">
-        <h3 class="heading  mb-3">Consultoria</h3>
+        <h3 class="heading  mb-3">Consultoria / Consulting</h3>
         <div class="row service_grids text-white d-flex align-items-baseline">
             <?php foreach (get_field('caixa') as $caixa) : ?>
             <div class="col-md-3 col-sm-6">
@@ -178,7 +187,7 @@ get_header();
 
 <section class="services py-3" style="background-color: whitesmoke;">
     <div class="container agile-info py-md-3">
-        <h3 class="heading mb-lg-3 mb-3">Projetos</h3>
+        <h3 class="heading mb-lg-3 mb-3">Projetos / Projects</h3>
         <div class="row blog-grids owl-carousel owl-theme slider-baixo">
 
             <?php foreach (get_field('caixa_projeto') as $caixa) : ?>
@@ -191,8 +200,7 @@ get_header();
                         </div>
                     </div>
                     <div class="col-4 mt-5">
-                        <img src="<?=$caixa['imagem']?>"
-                            class="img-fluid img-service" >
+                        <img src="<?=$caixa['imagem']?>" class="img-fluid img-service">
                     </div>
                 </div>
             </div>
@@ -204,9 +212,9 @@ get_header();
 </section>
 <section id="contact">
     <div class="container inner">
-        <h2 class="text-left mb-4 mt-4">Entre em contato</h2>
+        <h2 class="text-left mb-4 mt-4">Entre em contato / Contact</h2>
         <?=get_field('texto_contato')?>
-        
+
         <div class="divide50"></div>
         <div class="form-container">
             <?=do_shortcode('[contact-form-7 id="218" title="Formulário de contato 1"]'); ?>
