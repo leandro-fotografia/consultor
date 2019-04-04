@@ -57,8 +57,8 @@
 					<div class="buttons">
 						<p>
 							<a class="text-white" href="https://www.linkedin.com/in/leandrolnogueira/"><i class="fab fa-linkedin-in"></i></a>
-							<i class="fas mr-1 fa-phone"></i> <?=getTelefone(get_the_ID());?>							
-						</p>						
+							<i class="fas mr-1 fa-phone"></i> <?=getTelefone(get_the_ID());?>
+						</p>	
 					</div>
 				</div>
 			</nav>
