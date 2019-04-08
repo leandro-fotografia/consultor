@@ -20,7 +20,7 @@
 	<script>
 		jQuery(document).ready(function ($) {
 			$('.counter').counterUp({
-				delay: 100,
+				delay: 200,
 				time: 1000
 			});
 		});
@@ -30,7 +30,7 @@
 	<!-- Banner Responsiveslides -->
 	<script>
 		var $ = jQuery;
-		$(window).load(function() {
+		
 			$(function () {
 				// Slideshow 4
 				$("#slider3").responsiveSlides({
@@ -48,7 +48,7 @@
 				});
 
 			});
-		});
+		
 	</script>
 	<!-- // Banner Responsiveslides -->
 

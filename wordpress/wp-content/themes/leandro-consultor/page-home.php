@@ -4,6 +4,15 @@
  */
 get_header();
 ?>
+<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
 <script type="text/javascript">
 jQuery(document).ready(function($) { 
     $(".scroll").click(function(event){        
@@ -32,7 +41,7 @@ jQuery(document).ready(function($) {
         </ul>
     </div>
 </section>
-<!-- //banner -->
+
 <section class="container text-center mt-3 py-3" id="estatisticas">
     <div class="row">
         <?php foreach (get_field('contadores') as $contador) : ?>
